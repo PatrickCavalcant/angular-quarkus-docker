@@ -1,0 +1,84 @@
+<div class="container-fluid padding">
+   <div class="row">
+    <div class="col-12">
+      <h5 class="text-center">Cadastro de Departamentos</h5>
+    </div>
+   </div>
+</div>
+<br>
+      <form>
+        <div class="row">
+          <div class="col-md-6 pr-1">
+            <div class="form-group">
+              <label>Nome</label>
+              <input type="text" class="form-control" placeholder="Nome" value="" #nome>
+            </div>
+          </div>
+          <div class="col-md-6 pl-1">
+            <div class="form-group">
+              <label>Descrição</label>
+              <input type="text" class="form-control" placeholder="Descrição" value="" #descricao>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4 pr-1">
+            <div class="form-group">
+              <label>Cidade</label>
+              <input type="text" class="form-control" placeholder="City" value="Luziânia">
+            </div>
+          </div>
+          <div class="col-md-4 px-1">
+            <div class="form-group">
+              <label>Estado</label>
+              <input type="text" class="form-control" placeholder="Country" value="Goiás">
+            </div>
+          </div>
+          <div class="col-md-4 pl-1">
+            <div class="form-group">
+              <label>CEP</label>
+              <input type="number" class="form-control" placeholder="7283-0700">
+            </div>
+          </div>
+        </div>
+
+        <div class="row" >
+          <div class="pdate ml-auto mr-autuo col-11" >
+              <button type="submit" (click)="create(nome.value, descricao.value)" class="btn btn-primary btn-round">Cadastrar</button>
+          </div>
+        </div>
+
+      </form>
+
+
+
+
+<div *ngIf="isloading" id="loadercontainer">
+  <div class="loader">
+  </div>
+</div>
+
+ <div *ngIf="!isloading">
+
+
+<div class="container-fluid padding">
+  <div class="row">
+    <div class="col-12">
+      <h5 class="text-center">Departamentos</h5>
+    </div>
+
+  </div>
+  <hr/>
+  <div class="row" *ngFor="let ITEM of deptoList">
+    <div class="col-12 detalhe">
+      <h3>{{ITEM.nome}}</h3>
+      <p>{{ITEM.descricao}}</p>
+
+    </div>
+  </div>
+
+
+
+</div>
+</div>
